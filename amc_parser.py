@@ -188,8 +188,8 @@ def parse_asf(file_path):
       length,
       axis,
       dof,
-      limits
-    )
+      limits 
+   )
 
   # read hierarchy
   assert line[0] == ':hierarchy'
@@ -264,11 +264,11 @@ def test_all():
 
 
 if __name__ == '__main__':
-  test_all()
-  # asf_path = './133.asf'
-  # amc_path = './133_01.amc'
-  # joints = parse_asf(asf_path)
-  # motions = parse_amc(amc_path)
-  # frame_idx = 0
-  # joints['root'].set_motion(motions[frame_idx])
-  # joints['root'].draw()
+  #test_all()
+  asf_path = './data/01.asf'
+  amc_path = './data/01_01.amc'
+  joints = parse_asf(asf_path)
+  motions = parse_amc(amc_path)
+  frame_idx = 20
+  joints['root'].set_motion(motions[frame_idx])
+  joints['root'].draw()

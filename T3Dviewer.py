@@ -223,24 +223,26 @@ class Viewer:
 
     """
     while not self.done:
-      self.process_event()
+     #self.process_event()
       self.joints['root'].set_motion(self.motions[self.frame])
+      
       if self.playing:
         self.frame += 1
         if self.frame >= len(self.motions):
           self.frame = 0
-      self.draw()
-      pygame.display.set_caption(
-        'AMC Parser - frame %d / %d' % (self.frame, len(self.motions))
-      )
-      pygame.display.flip()
-      self.clock.tick(self.fps)
+      
+      #self.draw()
+      #pygame.display.set_caption(
+      #  'AMC Parser - frame %d / %d' % (self.frame, len(self.motions))
+      #)
+      #pygame.display.flip()
+      #self.clock.tick(self.fps)
     pygame.quit()
 
 
 if __name__ == '__main__':
-  asf_path = './data/01/01.asf'
-  amc_path = './data/01/01_01.amc'
+  asf_path = './data/01.asf'
+  amc_path = './data/01_01.amc'
   joints = parse_asf(asf_path)
   motions = parse_amc(amc_path)
   v = Viewer(joints, motions)

@@ -223,6 +223,7 @@ class Viewer:
 
     """
     while not self.done:
+     #commented sections done by me
      #self.process_event()
       self.joints['root'].set_motion(self.motions[self.frame])
       
